@@ -11,4 +11,9 @@ html {
   font-family: "Poppins", sans-serif;
   background: #000000;
   color: #e5e5e5;
+  background-image: url('/bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
 }
