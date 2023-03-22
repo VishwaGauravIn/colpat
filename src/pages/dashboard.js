@@ -15,7 +15,17 @@ export default function Dashboard() {
     "w-20 h-20 group-hover:scale-90 transition-all ease-in-out";
   return (
     <div className="flex w-full justify-center">
-      <Head></Head>
+      <Head>
+        <title>ColPat Dashboard : Color Palette & Design Tool</title>
+        <meta
+          name="description"
+          content="ColPat is the ultimate color palette generator with awesome tools. ColPat's AI, user-friendly interface, and customization options make it easy to find the perfect colors. Unleash your creativity and elevate your designs with ColPat!"
+        />
+        <meta
+          name="keywords"
+          content="ColPat, Color Palette, Gradient, Shade Generator, Color Shade, Tailwind"
+        />
+      </Head>
       <main className="w-full max-w-5xl mt-24 flex flex-wrap gap-10 justify-center">
         <DashboardBit
           color="bg-tint-emerald"
