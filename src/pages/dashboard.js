@@ -1,3 +1,4 @@
+import DashboardBit from "@/components/dashboard/DashboardBit";
 import Head from "next/head";
 import React from "react";
 import {
@@ -10,34 +11,41 @@ import {
 } from "react-bootstrap-icons";
 
 export default function Dashboard() {
+  const svgClassList =
+    "w-20 h-20 group-hover:scale-90 transition-all ease-in-out";
   return (
     <div className="flex w-full justify-center">
       <Head></Head>
       <main className="w-full max-w-5xl mt-24 flex flex-wrap gap-10 justify-center">
-        <div className="group p-10 w-11/12 sm:w-72 text-2xl text-center font-semibold text-black bg-tint-emerald rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer hover:ring-4 ring-offWhite/40">
-          <Sliders className="w-20 h-20 group-hover:scale-90 transition-all ease-in-out" />
-          Tailwind Palette Generator
-        </div>
-        <div className="group p-10 w-11/12 sm:w-72 text-2xl text-center font-semibold text-black bg-tint-yellow rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer hover:ring-4 ring-offWhite/40">
-          <Fire className="w-20 h-20 group-hover:scale-90 transition-all ease-in-out" />
-          Trending Color Palettes
-        </div>
-        <div className="group p-10 w-11/12 sm:w-72 text-2xl text-center font-semibold text-black bg-tint-fuchsia rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer hover:ring-4 ring-offWhite/40">
-          <Robot className="w-20 h-20 group-hover:scale-90 transition-all ease-in-out" />
-          Palette from Image [AI]
-        </div>
-        <div className="group p-10 w-11/12 sm:w-72 text-2xl text-center font-semibold text-black bg-tint-teal rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer hover:ring-4 ring-offWhite/40">
-          <Palette2 className="w-20 h-20 group-hover:scale-90 transition-all ease-in-out" />
-          Color Palette from Color [AI]
-        </div>
-        <div className="group p-10 w-11/12 sm:w-72 text-2xl text-center font-semibold text-black bg-tint-red rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer hover:ring-4 ring-offWhite/40">
-          <ArrowLeftRight className="w-20 h-20 group-hover:scale-90 transition-all ease-in-out" />
-          Color Code Converter
-        </div>
-        <div className="group p-10 w-11/12 sm:w-72 text-2xl text-center font-semibold text-black bg-tint-green rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer hover:ring-4 ring-offWhite/40">
-          <EmojiSunglasses className="w-20 h-20 group-hover:scale-90 transition-all ease-in-out" />
-          What Color Says!
-        </div>
+        <DashboardBit
+          color="bg-tint-emerald"
+          label="Tailwind Palette Generator"
+        >
+          <Sliders className={svgClassList} />
+        </DashboardBit>
+
+        <DashboardBit color="bg-tint-yellow" label="Trending Color Palettes">
+          <Fire className={svgClassList} />
+        </DashboardBit>
+
+        <DashboardBit color="bg-tint-fuchsia" label="Palette from Image [AI]">
+          <Robot className={svgClassList} />
+        </DashboardBit>
+
+        <DashboardBit
+          color="bg-tint-teal"
+          label="Color Palette from Color [AI]"
+        >
+          <Palette2 className={svgClassList} />
+        </DashboardBit>
+
+        <DashboardBit color="bg-tint-red" label="Color Code Converter">
+          <ArrowLeftRight className={svgClassList} />
+        </DashboardBit>
+
+        <DashboardBit color="bg-tint-green" label="What Color Says!">
+          <EmojiSunglasses className={svgClassList} />
+        </DashboardBit>
       </main>
     </div>
   );
