@@ -26,7 +26,7 @@ export default function Dashboard() {
           content="ColPat, Color Palette, Gradient, Shade Generator, Color Shade, Tailwind"
         />
       </Head>
-      <main className="w-full max-w-5xl mt-24 flex flex-wrap gap-10 justify-center">
+      <main className="w-full max-w-5xl flex flex-wrap gap-10 justify-center">
         <DashboardBit
           color="bg-tint-emerald"
           label="Tailwind Palette Generator"
