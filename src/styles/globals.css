@@ -11,9 +11,63 @@ html {
   font-family: "Poppins", sans-serif;
   background: #000000;
   color: #e5e5e5;
-  background-image: url('/bg.svg');
+  background-image: url("/bg.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   min-height: 100vh;
+}
+
+/* Custom Toastify CSS */
+
+:root {
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #d3f1f9 !important;
+  --toastify-color-success: #8cd3ae !important;
+  --toastify-color-warning: #f8d593 !important;
+  --toastify-color-error: #fec2b2 !important;
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: #fff;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+
+  /* Used only for colored theme */
+  --toastify-text-color-info: #000000 !important;
+  --toastify-text-color-success: #000000 !important;
+  --toastify-text-color-warning: #000000 !important;
+  --toastify-text-color-error: #000000 !important;
+
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+
+  /* Used when no type is provided */
+  /* toast("**hello**") */
+  --toastify-color-progress-light: linear-gradient(
+    to right,
+    #4cd964,
+    #5ac8fa,
+    #007aff,
+    #34aadc,
+    #5856d6,
+    #ff2d55
+  );
+  /* Used when no type is provided */
+  --toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
 }
