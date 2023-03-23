@@ -3,3 +3,11 @@ export default (colorCode) => {
   var names = ColorNamer(colorCode);
   return names.basic[0].name;
 };
+
+// Works for HEX, HSL, RGB, and RGBA
+
+/*
+Example : 
+    let colorName = getColorName("#E2D28F");
+    console.log(colorName)
+*/
