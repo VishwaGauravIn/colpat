@@ -13,6 +13,7 @@
     "color-namer": "^1.4.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "get-image-colors": "^4.0.1",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-bootstrap-icons": "^1.10.2",
