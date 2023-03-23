@@ -1,4 +1,5 @@
 import TailwindShade from "@/components/elements/button/TailwindShade";
+import codeCopier from "@/utils/codeCopier";
 import getColorName, { genericColorName } from "@/utils/getColorName";
 import getColorPalette from "@/utils/getColorPalette";
 import Head from "next/head";
@@ -26,7 +27,6 @@ export default function Pfi() {
 
         // Test
         setAiColors(getColorPalette(clr[0].hex()));
-        console.log(getColorPalette(clr[0].hex()));
       });
     }
   }, [img]);
@@ -44,7 +44,7 @@ export default function Pfi() {
           />
           {/* Generated palette */}
           <div className="flex flex-wrap gap-8 w-full justify-evenly">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-8">
               <p className="text-offWhite flex flex-col">
                 <span className="text-2xl font-semibold">
                   Generated Palette
@@ -62,6 +62,7 @@ export default function Pfi() {
                         className="w-10 h-10"
                         fill={color.hex()}
                         title={getColorName(color.hex())}
+                        onClick={() => codeCopier(color.hex())}
                       />
                       {genericColorName[index]} -
                       <span className="opacity-75">{color.hex()}</span>
@@ -74,7 +75,7 @@ export default function Pfi() {
             {/* Give option to generate tailwind scheme directly */}
 
             {/* Sugeested Palette */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-8">
               <p className="text-offWhite flex flex-col">
                 <span className="text-2xl font-semibold">
                   AI Suggested Palette
@@ -91,6 +92,7 @@ export default function Pfi() {
                         className="w-10 h-10"
                         fill={color}
                         title={getColorName(color)}
+                        onClick={() => codeCopier(color)}
                       />
                       {genericColorName[index]} -
                       <span className="opacity-75">{color}</span>
