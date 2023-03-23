@@ -1,10 +1,12 @@
 import TailwindShade from "@/components/elements/button/TailwindShade";
+import Toast from "@/components/elements/toast/Toast";
 import codeCopier from "@/utils/codeCopier";
 import getColorName, { genericColorName } from "@/utils/getColorName";
 import getColorPalette from "@/utils/getColorPalette";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { ArrowUpCircle, Recycle, SquareFill } from "react-bootstrap-icons";
+import { ToastContainer } from "react-toastify";
 
 const getColors = require("get-image-colors");
 
@@ -24,7 +26,6 @@ export default function Pfi() {
       getColors(img).then((clr) => {
         // `clr` is an array of color objects
         setColors(clr);
-
         // Test
         setAiColors(getColorPalette(clr[0].hex()));
       });
@@ -137,6 +138,7 @@ export default function Pfi() {
           </>
         </main>
       )}
+      <Toast />
     </div>
   );
 }
