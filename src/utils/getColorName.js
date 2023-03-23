@@ -11,3 +11,11 @@ Example :
     let colorName = getColorName("#E2D28F");
     console.log(colorName)
 */
+
+export const genericColorName = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "quaternary",
+  "quinary",
+];
