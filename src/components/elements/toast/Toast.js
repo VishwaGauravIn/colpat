@@ -13,7 +13,7 @@ export default function Toast() {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="dark"
+      theme="colored"
     />
   );
 }
@@ -27,6 +27,6 @@ export function codeCopiedToast() {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: "dark",
+    theme: "colored",
   });
 }
