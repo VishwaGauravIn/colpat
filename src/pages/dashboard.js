@@ -38,7 +38,7 @@ export default function Dashboard() {
           <Fire className={svgClassList} />
         </DashboardBit>
 
-        <DashboardBit color="bg-tint-fuchsia" label="Palette from Image [AI]">
+        <DashboardBit color="bg-tint-fuchsia" label="Palette from Image [AI]" href="/pfi">
           <Robot className={svgClassList} />
         </DashboardBit>
 

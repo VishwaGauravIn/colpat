@@ -36,7 +36,7 @@ export default function Pfi() {
       <Head></Head>
       {img ? (
         // When Image has been selected
-        <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem]">
+        <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem] mb-10">
           <p className="text-offWhite text-2xl font-semibold">Selected Image</p>
           <img
             src={img}
