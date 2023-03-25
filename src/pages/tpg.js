@@ -88,27 +88,28 @@ export default function Tpg() {
             <Clipboard2Check className="h-10 w-10 group-hover:scale-90 transition-all ease-in-out" />
             One Click Copy
           </button>
-          { router.isReady && 
-          <Highlight
-            {...defaultProps}
-            code={stringify(tailwindShades)}
-            language="js"
-          >
-            {({ className, style, tokens, getLineProps, getTokenProps }) => (
-              <pre
-                className={`${className} rounded-lg p-4 w-full max-w-3xl`}
-                style={style}
-              >
-                {tokens.map((line, i) => (
-                  <div {...getLineProps({ line, key: i })}>
-                    {line.map((token, key) => (
-                      <span {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                ))}
-              </pre>
-            )}
-          </Highlight>}
+          {router.isReady && (
+            <Highlight
+              {...defaultProps}
+              code={stringify(tailwindShades)}
+              language="js"
+            >
+              {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                <pre
+                  className={`${className} rounded-lg p-4 w-full max-w-3xl`}
+                  style={style}
+                >
+                  {tokens.map((line, i) => (
+                    <div key={i} {...getLineProps({ line, key: i })}>
+                      {line.map((token, key) => (
+                        <span key={key} {...getTokenProps({ token, key })} />
+                      ))}
+                    </div>
+                  ))}
+                </pre>
+              )}
+            </Highlight>
+          )}
         </div>
       </div>
       <Toast />
