@@ -30,6 +30,7 @@ export default function Dashboard() {
         <DashboardBit
           color="bg-tint-emerald"
           label="Tailwind Palette Generator"
+          href="/tpg"
         >
           <Sliders className={svgClassList} />
         </DashboardBit>
