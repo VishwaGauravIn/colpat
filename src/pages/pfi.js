@@ -36,7 +36,7 @@ export default function Pfi() {
       <Head></Head>
       {img ? (
         // When Image has been selected
-        <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem] mb-10">
+        <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem] mb-10 transition-all ease-in-out">
           <p className="text-offWhite text-2xl font-semibold">Selected Image</p>
           <img
             src={img}
@@ -71,7 +71,7 @@ export default function Pfi() {
                   ))}
                 </div>
               )}
-              <TailwindShade />
+              <TailwindShade colors={colors} />
             </div>
             {/* Give option to generate tailwind scheme directly */}
 
@@ -101,7 +101,7 @@ export default function Pfi() {
                   ))}
                 </div>
               )}
-              <TailwindShade />
+              <TailwindShade colors={aiColors} />
             </div>
           </div>
           <button
@@ -138,7 +138,7 @@ export default function Pfi() {
           </>
         </main>
       )}
-      <Toast />
+      <Toast color={aiColors} />
     </div>
   );
 }

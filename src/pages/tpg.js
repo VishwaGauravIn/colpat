@@ -11,7 +11,7 @@ import codeCopier from "@/utils/codeCopier";
 
 export default function Tpg() {
   const router = useRouter();
-  const [tailwindShades, setTailwindShades] = useState();
+  const [tailwindShades, setTailwindShades] = useState("");
   useEffect(() => {
     if (router.isReady) {
     }
@@ -88,6 +88,7 @@ export default function Tpg() {
             <Clipboard2Check className="h-10 w-10 group-hover:scale-90 transition-all ease-in-out" />
             One Click Copy
           </button>
+          { router.isReady && 
           <Highlight
             {...defaultProps}
             code={stringify(tailwindShades)}
@@ -107,7 +108,7 @@ export default function Tpg() {
                 ))}
               </pre>
             )}
-          </Highlight>
+          </Highlight>}
         </div>
       </div>
       <Toast />
