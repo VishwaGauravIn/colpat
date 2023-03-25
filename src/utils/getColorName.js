@@ -1,7 +1,7 @@
 import ColorNamer from "color-namer";
 export default (colorCode) => {
   var names = ColorNamer(colorCode);
-  return names.html[0].name;
+  return names.ntc[0].name.toLowerCase().replaceAll(" ", "-");
 };
 
 // Works for HEX, HSL, RGB, and RGBA
