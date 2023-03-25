@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import stringify from "json-stringify-pretty-compact";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-export default function tpg() {
+export default function Tpg() {
   const router = useRouter();
   const [tailwindShades, setTailwindShades] = useState();
   useEffect(() => {
