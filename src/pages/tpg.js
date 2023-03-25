@@ -5,13 +5,13 @@ import { tailwindcssPaletteGenerator } from "@bobthered/tailwindcss-palette-gene
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import stringify from "json-stringify-pretty-compact";
+import Highlight, { defaultProps } from "prism-react-renderer";
 
 export default function tpg() {
   const router = useRouter();
   const [tailwindShades, setTailwindShades] = useState();
   useEffect(() => {
     if (router.isReady) {
-      console.log();
     }
   }, [router.isReady]);
 
@@ -30,6 +30,9 @@ export default function tpg() {
         "col4"
       )}&col5=${getEncodedVal("col5")}`
     );
+    updateTailwindShades();
+  }
+  function updateTailwindShades() {
     setTailwindShades(
       tailwindcssPaletteGenerator([
         getVal("col1"),
@@ -38,17 +41,6 @@ export default function tpg() {
         getVal("col4"),
         getVal("col5"),
       ])
-    );
-    console.log(
-      JSON.stringify(
-        tailwindcssPaletteGenerator([
-          getVal("col1"),
-          getVal("col2"),
-          getVal("col3"),
-          getVal("col4"),
-          getVal("col5"),
-        ])
-      )
     );
   }
   return (
@@ -60,29 +52,50 @@ export default function tpg() {
               id="col1"
               label={genericColorName[0]}
               onChangeTrigger={onChangeTrigger}
+              updateTailwindShades={updateTailwindShades}
             />
             <ColorPicker
               id="col2"
               label={genericColorName[1]}
               onChangeTrigger={onChangeTrigger}
+              updateTailwindShades={updateTailwindShades}
             />
             <ColorPicker
               id="col3"
               label={genericColorName[2]}
               onChangeTrigger={onChangeTrigger}
+              updateTailwindShades={updateTailwindShades}
             />
             <ColorPicker
               id="col4"
               label={genericColorName[3]}
               onChangeTrigger={onChangeTrigger}
+              updateTailwindShades={updateTailwindShades}
             />
             <ColorPicker
               id="col5"
               label={genericColorName[4]}
               onChangeTrigger={onChangeTrigger}
+              updateTailwindShades={updateTailwindShades}
             />
           </div>
-          <p className="whitespace-pre">{stringify(tailwindShades)}</p>
+          <Highlight
+            {...defaultProps}
+            code={stringify({ colors: tailwindShades })}
+            language="js"
+          >
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+              <pre className={`${className} `} style={style}>
+                {tokens.map((line, i) => (
+                  <div {...getLineProps({ line, key: i })}>
+                    {line.map((token, key) => (
+                      <span {...getTokenProps({ token, key })} />
+                    ))}
+                  </div>
+                ))}
+              </pre>
+            )}
+          </Highlight>
         </div>
       </div>
       <Toast />

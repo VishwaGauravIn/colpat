@@ -3,7 +3,12 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { customToast } from "../elements/toast/Toast";
 
-export default function ColorPicker({ id, label, onChangeTrigger }) {
+export default function ColorPicker({
+  id,
+  label,
+  onChangeTrigger,
+  updateTailwindShades,
+}) {
   const router = useRouter();
   // Using this to Solve hydration issue
   const [isVisible, setIsVisible] = useState(false);
@@ -12,14 +17,18 @@ export default function ColorPicker({ id, label, onChangeTrigger }) {
   useEffect(() => {
     setIsVisible(true);
     if (router.isReady && isVisible) {
-      document.getElementById(`${id}_val`).value = router.query[id]
-        ? router.query[id]
-        : "#ffffff";
-      document.getElementById(id).value = router.query[id]
-        ? router.query[id]
-        : "#ffffff";
+      console.log(router.query[id]);
+      document.getElementById(`${id}_val`).value =
+        router.query[id] !== "" && router.query[id] !== undefined ? router.query[id] : "#ffffff";
+      document.getElementById(id).value =
+        router.query[id] !== "" && router.query[id] !== undefined ? router.query[id] : "#ffffff";
     }
   });
+  useEffect(() => {
+    if (isVisible && router.isReady) {
+      updateTailwindShades();
+    }
+  }, [isVisible, router.isReady]);
 
   return (
     <>
