@@ -1,13 +1,25 @@
 import getColorName from "@/utils/getColorName";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { customToast } from "../elements/toast/Toast";
 
-export default function ColorPicker({ val, setVal, label }) {
+export default function ColorPicker({ id, label, onChangeTrigger }) {
+  const router = useRouter();
   // Using this to Solve hydration issue
   const [isVisible, setIsVisible] = useState(false);
+
+  //  WARN: Using Dom method to avoid redering
   useEffect(() => {
     setIsVisible(true);
-  }, []);
+    if (router.isReady && isVisible) {
+      document.getElementById(`${id}_val`).value = router.query[id]
+        ? router.query[id]
+        : "#ffffff";
+      document.getElementById(id).value = router.query[id]
+        ? router.query[id]
+        : "#ffffff";
+    }
+  });
 
   return (
     <>
@@ -15,17 +27,31 @@ export default function ColorPicker({ val, setVal, label }) {
         <div className="flex flex-col gap-2 w-24 justify-center items-center">
           <input
             type="color"
-            id=""
-            defaultValue={val}
-            onChange={(e) => setVal(e.target.value)}
-            className="outline-none bg-transparent h-10 w-10 rounded-full overflow-hidden transition-all ease-in-out duration-100"
+            id={id}
+            defaultValue="#ffffff"
+            onChange={(e) => {
+              document.getElementById(`${id}_val`).value = e.target.value;
+              onChangeTrigger();
+            }}
+            className="outline-none bg-transparent h-10 w-10 rounded-full overflow-hidden transition-all ease-in-out duration-100 ring ring-tint-emerald"
           />
 
-          <span className="opacity-75">{val}</span>
+          <input
+            type="text"
+            id={`${id}_val`}
+            className="opacity-75 bg-transparent text-center"
+            disabled
+          />
           <span className="capitalize font-semibold">{label}</span>
           <button
             className="text-xs bg-tint-emerald text-black w-full py-1 rounded-sm hover:ring-2 ring-offWhite/40"
-            onClick={() => customToast(`Color name is: ${getColorName(val)}`)}
+            onClick={() =>
+              customToast(
+                `Color name is: ${getColorName(
+                  document.getElementById(`${id}_val`).value
+                )}`
+              )
+            }
           >
             Check name
           </button>
