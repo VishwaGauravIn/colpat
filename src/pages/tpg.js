@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import stringify from "json-stringify-pretty-compact";
 import Highlight, { defaultProps } from "prism-react-renderer";
+import { Clipboard2Check } from "react-bootstrap-icons";
+import codeCopier from "@/utils/codeCopier";
 
 export default function Tpg() {
   const router = useRouter();
@@ -46,7 +48,7 @@ export default function Tpg() {
   return (
     <>
       <div className="w-full flex justify-center">
-        <div className="w-full max-w-5xl">
+        <div className="w-full max-w-5xl flex items-center flex-col gap-10">
           <div className="w-full flex flex-wrap justify-evenly">
             <ColorPicker
               id="col1"
@@ -79,13 +81,23 @@ export default function Tpg() {
               updateTailwindShades={updateTailwindShades}
             />
           </div>
+          <button
+            className="rounded-full py-4 px-8 text-xl font-semibold bg-tint-emerald text-black flex justify-center items-center gap-2 group hover:ring-4 ring-offWhite/40"
+            onClick={() => codeCopier(stringify(tailwindShades))}
+          >
+            <Clipboard2Check className="h-10 w-10 group-hover:scale-90 transition-all ease-in-out" />
+            One Click Copy
+          </button>
           <Highlight
             {...defaultProps}
-            code={stringify({ colors: tailwindShades })}
+            code={stringify(tailwindShades)}
             language="js"
           >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
-              <pre className={`${className} `} style={style}>
+              <pre
+                className={`${className} rounded-lg p-4 w-full max-w-3xl`}
+                style={style}
+              >
                 {tokens.map((line, i) => (
                   <div {...getLineProps({ line, key: i })}>
                     {line.map((token, key) => (
