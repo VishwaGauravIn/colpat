@@ -71,3 +71,15 @@ html {
   --toastify-color-progress-warning: var(--toastify-color-warning);
   --toastify-color-progress-error: var(--toastify-color-error);
 }
+
+/* Custom style in input type color : basically removing the border padding */
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+input[type="color"]:focus-within{
+  border-radius: 4px;
+  width: 3.5rem;
+}
