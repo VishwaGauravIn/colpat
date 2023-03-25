@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bobthered/tailwindcss-palette-generator": "^3.1.1",
     "bootstrap-icons": "^1.10.3",
     "color-namer": "^1.4.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "get-image-colors": "^4.0.1",
+    "json-stringify-pretty-compact": "^4.0.0",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-bootstrap-icons": "^1.10.2",

@@ -1,19 +1,26 @@
 import Toast from "@/components/elements/toast/Toast";
 import ColorPicker from "@/components/globals/ColorPicker";
 import { genericColorName } from "@/utils/getColorName";
+import { tailwindcssPaletteGenerator } from "@bobthered/tailwindcss-palette-generator";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import stringify from "json-stringify-pretty-compact";
 
 export default function tpg() {
   const router = useRouter();
+  const [tailwindShades, setTailwindShades] = useState();
   useEffect(() => {
     if (router.isReady) {
+      console.log();
     }
   }, [router.isReady]);
 
   //  WARN: Using Dom method to avoid redering
   function getEncodedVal(id) {
     return encodeURIComponent(document.getElementById(`${id}_val`).value);
+  }
+  function getVal(id) {
+    return document.getElementById(`${id}_val`).value;
   }
   function onChangeTrigger() {
     router.push(
@@ -22,6 +29,26 @@ export default function tpg() {
       )}&col3=${getEncodedVal("col3")}&col4=${getEncodedVal(
         "col4"
       )}&col5=${getEncodedVal("col5")}`
+    );
+    setTailwindShades(
+      tailwindcssPaletteGenerator([
+        getVal("col1"),
+        getVal("col2"),
+        getVal("col3"),
+        getVal("col4"),
+        getVal("col5"),
+      ])
+    );
+    console.log(
+      JSON.stringify(
+        tailwindcssPaletteGenerator([
+          getVal("col1"),
+          getVal("col2"),
+          getVal("col3"),
+          getVal("col4"),
+          getVal("col5"),
+        ])
+      )
     );
   }
   return (
@@ -55,6 +82,7 @@ export default function tpg() {
               onChangeTrigger={onChangeTrigger}
             />
           </div>
+          <p className="whitespace-pre">{stringify(tailwindShades)}</p>
         </div>
       </div>
       <Toast />
