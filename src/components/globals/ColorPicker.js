@@ -17,7 +17,6 @@ export default function ColorPicker({
   useEffect(() => {
     setIsVisible(true);
     if (router.isReady && isVisible) {
-      console.log(router.query[id]);
       document.getElementById(`${id}_val`).value =
         router.query[id] !== "" && router.query[id] !== undefined ? router.query[id] : "#ffffff";
       document.getElementById(id).value =
@@ -33,16 +32,15 @@ export default function ColorPicker({
   return (
     <>
       {isVisible && (
-        <div className="flex flex-col gap-2 w-24 justify-center items-center">
+        <div className="flex flex-col gap-2 w-24 justify-center items-center m-4">
           <input
             type="color"
             id={id}
             defaultValue="#ffffff"
             onChange={(e) => {
               document.getElementById(`${id}_val`).value = e.target.value;
-              onChangeTrigger();
             }}
-            className="outline-none bg-transparent h-10 w-10 rounded-full overflow-hidden transition-all ease-in-out duration-100 ring ring-tint-emerald"
+            className="outline-none bg-transparent h-10 w-10 rounded-full overflow-hidden transition-all ease-in-out duration-100 ring ring-grey"
           />
 
           <input

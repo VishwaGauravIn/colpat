@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import stringify from "json-stringify-pretty-compact";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import { Clipboard2Check } from "react-bootstrap-icons";
+import { Brush, Clipboard2Check } from "react-bootstrap-icons";
 import codeCopier from "@/utils/codeCopier";
 
 export default function Tpg() {
@@ -49,6 +49,13 @@ export default function Tpg() {
     <>
       <div className="w-full flex justify-center">
         <div className="w-full max-w-5xl flex items-center flex-col gap-10">
+          <p className="text-3xl font-semibold text-white text-center">
+            TailwindCSS Palette Generator
+          </p>
+          <p className="text-sm md:text-base text-center text-offWhite">
+            Click on the color to change it, once selected, just click on
+            generate to create the palette!
+          </p>
           <div className="w-full flex flex-wrap justify-evenly">
             <ColorPicker
               id="col1"
@@ -82,12 +89,13 @@ export default function Tpg() {
             />
           </div>
           <button
-            className="rounded-full py-4 px-8 text-xl font-semibold bg-tint-emerald text-black flex justify-center items-center gap-2 group hover:ring-4 ring-offWhite/40"
-            onClick={() => codeCopier(stringify(tailwindShades))}
+            className="rounded-full py-3 px-6 text-xl font-semibold bg-tint-emerald text-black flex justify-center items-center gap-2 group hover:ring-4 ring-offWhite/40"
+            onClick={onChangeTrigger}
           >
-            <Clipboard2Check className="h-10 w-10 group-hover:scale-90 transition-all ease-in-out" />
-            One Click Copy
+            <Brush className="h-8 w-8 group-hover:scale-90 transition-all ease-in-out" />
+            Generate
           </button>
+
           {router.isReady && (
             <Highlight
               {...defaultProps}
@@ -110,6 +118,13 @@ export default function Tpg() {
               )}
             </Highlight>
           )}
+          <button
+            className="rounded-full py-3 px-6 text-xl font-semibold bg-tint-emerald text-black flex justify-center items-center gap-2 group hover:ring-4 ring-offWhite/40"
+            onClick={() => codeCopier(stringify(tailwindShades))}
+          >
+            <Clipboard2Check className="h-8 w-8 group-hover:scale-90 transition-all ease-in-out" />
+            One Click Copy
+          </button>
         </div>
       </div>
       <Toast />
