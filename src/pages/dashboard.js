@@ -27,6 +27,10 @@ export default function Dashboard() {
         />
       </Head>
       <main className="w-full max-w-5xl flex flex-wrap gap-10 justify-center">
+        <DashboardBit color="bg-tint-yellow" label="Trending Color Palettes">
+          <Fire className={svgClassList} />
+        </DashboardBit>
+
         <DashboardBit
           color="bg-tint-emerald"
           label="Tailwind Palette Generator"
@@ -35,11 +39,11 @@ export default function Dashboard() {
           <Sliders className={svgClassList} />
         </DashboardBit>
 
-        <DashboardBit color="bg-tint-yellow" label="Trending Color Palettes">
-          <Fire className={svgClassList} />
-        </DashboardBit>
-
-        <DashboardBit color="bg-tint-fuchsia" label="Palette from Image [AI]" href="/pfi">
+        <DashboardBit
+          color="bg-tint-fuchsia"
+          label="Palette from Image [AI]"
+          href="/pfi"
+        >
           <Robot className={svgClassList} />
         </DashboardBit>
 
