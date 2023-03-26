@@ -37,6 +37,9 @@ export default function Pfi() {
       {img ? (
         // When Image has been selected
         <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem] mb-10 transition-all ease-in-out">
+          <p className="text-3xl font-semibold text-white text-center">
+            Palette from Image [AI]
+          </p>
           <p className="text-offWhite text-2xl font-semibold">Selected Image</p>
           <img
             src={img}
