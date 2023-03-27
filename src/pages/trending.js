@@ -43,11 +43,14 @@ export default function Trending() {
             Trending Palettes 🔥
           </p>
           <p className="text-sm md:text-base text-center text-offWhite">
-            Click on the color to copy it, hover mouse get the color name!
+            Click on the color to copy it, hover mouse to get the color name!
           </p>
           <div className="flex flex-col gap-10 justify-center items-center">
             {colors.map((colors, i) => (
-              <div key={i} className="flex gap-4 items-center flex-col sm:flex-row">
+              <div
+                key={i}
+                className="flex gap-4 items-center flex-col sm:flex-row"
+              >
                 <div className="flex gap-2 items-center">
                   #{count * 10 + (i + 1)}
                   {colors.map((color, i) => (
