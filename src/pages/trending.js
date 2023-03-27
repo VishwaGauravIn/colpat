@@ -47,18 +47,19 @@ export default function Trending() {
           </p>
           <div className="flex flex-col gap-10 justify-center items-center">
             {colors.map((colors, i) => (
-              <div key={i} className="flex gap-2 items-center">
-                {" "}
-                #{((count)*10)+(i + 1)}
-                {colors.map((color, i) => (
-                  <SquareFill
-                    fill={color}
-                    key={i}
-                    className="w-16 h-16"
-                    title={getColorName(color)}
-                    onClick={() => codeCopier(color)}
-                  />
-                ))}
+              <div key={i} className="flex gap-4 items-center flex-col sm:flex-row">
+                <div className="flex gap-2 items-center">
+                  #{count * 10 + (i + 1)}
+                  {colors.map((color, i) => (
+                    <SquareFill
+                      fill={color}
+                      key={i}
+                      className="w-12 sm:w-16 h-12 sm:h-16"
+                      title={getColorName(color)}
+                      onClick={() => codeCopier(color)}
+                    />
+                  ))}
+                </div>
                 <div className="ml-8">
                   <TailwindShade colors={colors} />
                 </div>
