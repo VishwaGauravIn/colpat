@@ -27,7 +27,11 @@ export default function Dashboard() {
         />
       </Head>
       <main className="w-full max-w-5xl flex flex-wrap gap-10 justify-center">
-        <DashboardBit color="bg-tint-yellow" label="Trending Color Palettes">
+        <DashboardBit
+          color="bg-tint-yellow"
+          label="Trending Color Palettes"
+          href="/trending"
+        >
           <Fire className={svgClassList} />
         </DashboardBit>
 

@@ -6,7 +6,6 @@ import getColorPalette from "@/utils/getColorPalette";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { ArrowUpCircle, Recycle, SquareFill } from "react-bootstrap-icons";
-import { ToastContainer } from "react-toastify";
 
 const getColors = require("get-image-colors");
 
