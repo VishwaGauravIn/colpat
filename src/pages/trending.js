@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap-icons";
 
 export default function Trending() {
-  var col = require("nice-color-palettes");
+  var col = require("nice-color-palettes/500");
   const [count, setCount] = useState(0);
   const [colors, setColors] = useState(get10);
 
@@ -40,19 +40,20 @@ export default function Trending() {
       <div className="flex justify-center">
         <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem] mb-10 transition-all ease-in-out">
           <p className="text-3xl font-semibold text-white text-center">
-            Trending Palettes
+            Trending Palettes 🔥
           </p>
           <p className="text-sm md:text-base text-center text-offWhite">
             Click on the color to copy it, hover mouse get the color name!
           </p>
           <div className="flex flex-col gap-10 justify-center items-center">
             {colors.map((colors, i) => (
-              <div className="flex gap-2 items-center">
+              <div key={i} className="flex gap-2 items-center">
                 {" "}
-                #{i + 1}
+                #{((count)*10)+(i + 1)}
                 {colors.map((color, i) => (
                   <SquareFill
                     fill={color}
+                    key={i}
                     className="w-16 h-16"
                     title={getColorName(color)}
                     onClick={() => codeCopier(color)}
@@ -73,11 +74,11 @@ export default function Trending() {
               <CaretLeftFill className="h-6 w-6 group-hover:scale-90 transition-all ease-in-out" />
               Previous
             </button>
-            <span className="text-offWhite">{count + 1}/10</span>
+            <span className="text-offWhite">{count + 1}/50</span>
 
             <button
               className="rounded-full py-3 px-6 text-base font-semibold bg-tint-yellow disabled:bg-grey disabled:text-offWhite text-black flex justify-center items-center gap-1 group hover:ring-4 ring-offWhite/40 disabled:cursor-not-allowed"
-              disabled={count === 9}
+              disabled={count === 49}
               onClick={() => setCount(count + 1)}
             >
               Next
