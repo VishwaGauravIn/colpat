@@ -8,6 +8,7 @@ import stringify from "json-stringify-pretty-compact";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import { Brush, Clipboard2Check } from "react-bootstrap-icons";
 import codeCopier from "@/utils/codeCopier";
+import Head from "next/head";
 
 export default function Tpg() {
   const router = useRouter();
@@ -47,6 +48,9 @@ export default function Tpg() {
   }
   return (
     <>
+      <Head>
+        <title>ColPat : TailwindCSS Palette Generator</title>
+      </Head>
       <div className="w-full flex justify-center">
         <div className="w-full max-w-5xl flex items-center flex-col gap-10">
           <p className="text-3xl font-semibold text-white text-center">

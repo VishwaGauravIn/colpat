@@ -32,7 +32,9 @@ export default function Pfi() {
   }, [img]);
   return (
     <div className="flex justify-center">
-      <Head></Head>
+      <Head>
+        <title>ColPat : Palette from Image [AI]</title>
+      </Head>
       {img ? (
         // When Image has been selected
         <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem] mb-10 transition-all ease-in-out">
