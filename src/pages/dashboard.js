@@ -8,6 +8,7 @@ import {
   Palette2,
   ArrowLeftRight,
   EmojiSunglasses,
+  Gem,
 } from "react-bootstrap-icons";
 
 export default function Dashboard() {
@@ -35,6 +36,10 @@ export default function Dashboard() {
           <Fire className={svgClassList} />
         </DashboardBit>
 
+        <DashboardBit color="bg-tint-red" label="Awesome Gradients" href="/gradients">
+          <Gem className={svgClassList} />
+        </DashboardBit>
+
         <DashboardBit
           color="bg-tint-emerald"
           label="Tailwind Palette Generator"
@@ -56,10 +61,6 @@ export default function Dashboard() {
           label="Color Palette from Color [AI]"
         >
           <Palette2 className={svgClassList} />
-        </DashboardBit>
-
-        <DashboardBit color="bg-tint-red" label="Color Code Converter">
-          <ArrowLeftRight className={svgClassList} />
         </DashboardBit>
 
         <DashboardBit color="bg-tint-green" label="What Color Says!">
