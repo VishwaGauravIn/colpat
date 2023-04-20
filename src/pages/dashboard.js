@@ -63,7 +63,7 @@ export default function Dashboard() {
           <Palette2 className={svgClassList} />
         </DashboardBit>
 
-        <DashboardBit color="bg-tint-green" label="What Color Says!">
+        <DashboardBit color="bg-tint-green" label="What Color Says!" href="/color-says" >
           <EmojiSunglasses className={svgClassList} />
         </DashboardBit>
       </main>
