@@ -62,8 +62,8 @@ export default function PaletteFromColor() {
                       fill={color}
                       key={id}
                       className="border-2 border-white rounded-xl h-16 w-16"
-                      title={color.toString()}
-                      onClick={() => codeCopier(color)}
+                      title={`#${tinycolor(color).toHex()}`}
+                      onClick={() => codeCopier(`#${tinycolor(color).toHex()}`)}
                     />
                   ))}
                 {tinycolor(color)
@@ -74,8 +74,8 @@ export default function PaletteFromColor() {
                       fill={color}
                       key={id}
                       className="border-2 border-white rounded-xl h-16 w-16"
-                      title={color.toString()}
-                      onClick={() => codeCopier(color)}
+                      title={`#${tinycolor(color).toHex()}`}
+                      onClick={() => codeCopier(`#${tinycolor(color).toHex()}`)}
                     />
                   ))}
               </div>
