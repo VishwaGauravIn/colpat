@@ -63,6 +63,7 @@ export default function Dashboard() {
         <DashboardBit
           color="bg-tint-teal"
           label="Color Palette from Color [AI]"
+          href="/palette-from-color"
         >
           <Palette2 className={svgClassList} />
         </DashboardBit>

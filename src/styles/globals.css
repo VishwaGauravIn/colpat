@@ -83,3 +83,8 @@ input[type="color"]:focus-within {
   border-radius: 4px;
   width: 3.5rem;
 }
+
+.big input[type="color"]:focus-within {
+  border-radius: 4px;
+  width: 10rem;
+}

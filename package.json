@@ -25,7 +25,8 @@
     "react-bootstrap-icons": "^1.10.2",
     "react-dom": "18.2.0",
     "react-toastify": "^9.1.2",
-    "shade-generator": "^1.2.7"
+    "shade-generator": "^1.2.7",
+    "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
