@@ -12,7 +12,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Twitter className="w-4 h-4"/>
+          <Twitter className="w-4 h-4" />
         </a>
         {/* GitHub */}
         <a
@@ -21,7 +21,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Github className="w-4 h-4"/>
+          <Github className="w-4 h-4" />
         </a>
         {/* LinkedIn */}
         <a
@@ -30,7 +30,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Linkedin className="w-4 h-4"/>
+          <Linkedin className="w-4 h-4" />
         </a>
         {/* Instagram */}
         <a
@@ -39,7 +39,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Instagram className="w-4 h-4"/>
+          <Instagram className="w-4 h-4" />
         </a>
       </div>
       <div className="w-full flex justify-center items-center text-green-200">

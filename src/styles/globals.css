@@ -79,7 +79,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
   border: none;
 }
-input[type="color"]:focus-within{
+input[type="color"]:focus-within {
   border-radius: 4px;
   width: 3.5rem;
 }

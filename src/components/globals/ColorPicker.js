@@ -18,9 +18,13 @@ export default function ColorPicker({
     setIsVisible(true);
     if (router.isReady && isVisible) {
       document.getElementById(`${id}_val`).value =
-        router.query[id] !== "" && router.query[id] !== undefined ? router.query[id] : "#ffffff";
+        router.query[id] !== "" && router.query[id] !== undefined
+          ? router.query[id]
+          : "#ffffff";
       document.getElementById(id).value =
-        router.query[id] !== "" && router.query[id] !== undefined ? router.query[id] : "#ffffff";
+        router.query[id] !== "" && router.query[id] !== undefined
+          ? router.query[id]
+          : "#ffffff";
     }
   });
   useEffect(() => {

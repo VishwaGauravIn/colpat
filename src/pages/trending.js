@@ -38,9 +38,9 @@ export default function Trending() {
   }, [count]);
   return (
     <>
-    <Head>
-      <title>ColPat : Trending Palettes 🔥</title>
-    </Head>
+      <Head>
+        <title>ColPat : Trending Palettes 🔥</title>
+      </Head>
       <div className="flex justify-center">
         <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem] mb-10 transition-all ease-in-out">
           <p className="text-3xl font-semibold text-white text-center">

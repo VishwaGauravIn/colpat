@@ -17,7 +17,6 @@ export default function ColorSays() {
           Click on the color to copy hex code
         </p>
         <div className="flex px-4 md:w-10/12 gap-10 flex-wrap justify-center">
-          
           <WhatColorSays
             hex="CCA773"
             name="Beige"

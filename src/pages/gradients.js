@@ -15,7 +15,7 @@ export default function Gradients() {
       <div className="w-full flex justify-center">
         <main className="w-full max-w-5xl flex flex-col items-center justify-center">
           <p className="text-3xl font-semibold text-white text-center mb-10">
-          Awesome Gradients ✨
+            Awesome Gradients ✨
           </p>
           <div
             style={{

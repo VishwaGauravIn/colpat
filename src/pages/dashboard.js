@@ -36,7 +36,11 @@ export default function Dashboard() {
           <Fire className={svgClassList} />
         </DashboardBit>
 
-        <DashboardBit color="bg-tint-red" label="Awesome Gradients" href="/gradients">
+        <DashboardBit
+          color="bg-tint-red"
+          label="Awesome Gradients"
+          href="/gradients"
+        >
           <Gem className={svgClassList} />
         </DashboardBit>
 
@@ -63,7 +67,11 @@ export default function Dashboard() {
           <Palette2 className={svgClassList} />
         </DashboardBit>
 
-        <DashboardBit color="bg-tint-green" label="What Color Says!" href="/color-says" >
+        <DashboardBit
+          color="bg-tint-green"
+          label="What Color Says!"
+          href="/color-says"
+        >
           <EmojiSunglasses className={svgClassList} />
         </DashboardBit>
       </main>
