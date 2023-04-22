@@ -18,7 +18,7 @@ html {
   min-height: 100vh;
 }
 
-/* Custom Toastify CSS */
+/* Custom Toastify CSS starts */
 
 :root {
   --toastify-color-light: #fff;
@@ -71,6 +71,8 @@ html {
   --toastify-color-progress-warning: var(--toastify-color-warning);
   --toastify-color-progress-error: var(--toastify-color-error);
 }
+
+/* Custom Toastify CSS ends */
 
 /* Custom style in input type color : basically removing the border padding */
 input[type="color"]::-webkit-color-swatch-wrapper {
