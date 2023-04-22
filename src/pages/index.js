@@ -1,5 +1,5 @@
 import PreFooter from "@/components/home/PreFooter";
-import HeroAnimation from "@/components/home/hero/HeroAnimation";
+import Hero from "@/components/home/hero/Hero";
 import MouseTrail from "@pjsalita/react-mouse-trail";
 import Head from "next/head";
 
@@ -28,15 +28,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="-mt-24 cursor-none">
-        <div className="flex flex-col md:flex-row w-full min-h-screen justify-between">
-          <div className="w-full md:w-6/12 ring"></div>
-          <div className="w-full md:w-6/12 h-80 md:h-auto flex justify-center items-center relative invert brightness-90">
-            <HeroAnimation />
-          </div>
-        </div>
+        <Hero />
         <PreFooter />
       </main>
-      <MouseTrail {...config} />
+      <div className="hidden sm:block">
+        <MouseTrail {...config} />
+      </div>
     </>
   );
 }
