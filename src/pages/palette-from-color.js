@@ -1,8 +1,8 @@
+import TailwindShade from "@/components/elements/button/TailwindShade";
 import Toast, { customToast } from "@/components/elements/toast/Toast";
 import codeCopier from "@/utils/codeCopier";
 import getColorName from "@/utils/getColorName";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { SquareFill } from "react-bootstrap-icons";
 
@@ -10,9 +10,28 @@ var tinycolor = require("tinycolor2");
 
 export default function PaletteFromColor() {
   const [color, setColor] = useState();
+  const [palette, setPalette] = useState([]);
+  // automatically seeting the initial color, doing this way to dodge the render mismatch issue
   useEffect(() => {
     setColor("#e53883");
   }, []);
+
+  useEffect(() => {
+    // creating a temp array
+    let temp = [];
+    // pushing the top 3 analgous colors (hex value)
+    tinycolor(color)
+      .analogous()
+      .splice(3)
+      .map((color) => temp.push("#" + tinycolor(color).toHex()));
+    // pushing the last 2 complement colors (hex value)
+    tinycolor(color)
+      .splitcomplement()
+      .splice(-2)
+      .map((color) => temp.push("#" + tinycolor(color).toHex()));
+    // finally assigning temp array value to
+    setPalette(temp);
+  }, [color]);
 
   return (
     <>
@@ -28,6 +47,7 @@ export default function PaletteFromColor() {
         </p>
         <div className="flex px-4 md:w-10/12 gap-10 flex-wrap flex-col items-center">
           <div className="flex flex-col gap-2 w-24 justify-center items-center m-4 big">
+            {/* doing this way to dodge the render mismatch issue */}
             {color && (
               <input
                 type="color"
@@ -48,38 +68,24 @@ export default function PaletteFromColor() {
               Check name
             </button>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-6 items-center">
             <p className="text-sm md:text-base text-center text-offWhite">
               Click on the color to copy it
             </p>
             {color && (
               <div className="flex gap-6">
-                {tinycolor(color)
-                  .analogous()
-                  .splice(3)
-                  .map((color, id) => (
-                    <SquareFill
-                      fill={color}
-                      key={id}
-                      className="border-2 border-white rounded-xl h-16 w-16"
-                      title={`#${tinycolor(color).toHex()}`}
-                      onClick={() => codeCopier(`#${tinycolor(color).toHex()}`)}
-                    />
-                  ))}
-                {tinycolor(color)
-                  .splitcomplement()
-                  .splice(-2)
-                  .map((color, id) => (
-                    <SquareFill
-                      fill={color}
-                      key={id}
-                      className="border-2 border-white rounded-xl h-16 w-16"
-                      title={`#${tinycolor(color).toHex()}`}
-                      onClick={() => codeCopier(`#${tinycolor(color).toHex()}`)}
-                    />
-                  ))}
+                {palette.map((color, id) => (
+                  <SquareFill
+                    fill={color}
+                    key={id}
+                    className="border-2 border-white rounded-xl h-16 w-16"
+                    title={color}
+                    onClick={() => codeCopier(color)}
+                  />
+                ))}
               </div>
             )}
+            <TailwindShade colors={palette} />
           </div>
         </div>
       </main>
