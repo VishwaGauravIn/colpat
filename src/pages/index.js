@@ -1,4 +1,5 @@
 import PreFooter from "@/components/home/PreFooter";
+import HeroAnimation from "@/components/home/hero/HeroAnimation";
 import Head from "next/head";
 
 export default function Home() {
@@ -17,7 +18,11 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="">
+      <main className="-mt-24">
+        <div className="flex flex-col md:flex-row w-full min-h-screen justify-between">
+        <div className="w-full md:w-6/12 ring"></div>
+        <div className="w-full md:w-6/12 h-80 md:h-auto flex justify-center items-center relative invert brightness-90"><HeroAnimation /></div>
+        </div>
         <PreFooter />
       </main>
     </>

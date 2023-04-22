@@ -16,6 +16,7 @@ html {
   background-position: center;
   background-size: cover;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Custom Toastify CSS starts */
