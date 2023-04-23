@@ -91,6 +91,3 @@ input[type="color"]:focus-within {
   border-radius: 4px;
   width: 10rem;
 }
-::-webkit-scrollbar {
-  display: none;
-}
