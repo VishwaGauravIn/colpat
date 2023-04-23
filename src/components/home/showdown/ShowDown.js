@@ -7,6 +7,7 @@ export default function ShowDown() {
       <ShowDownBit href="/dashboard" src="/assets/1.png" label="DASHBOARD" />
       <ShowDownBit href="/trending" src="/assets/2.png" label="TRENDINGPALETTES" />
       <ShowDownBit href="/gradients" src="/assets/3.png" label="AWESOMEGRADIENTS" />
+      <ShowDownBit href="/tpg" src="/assets/8.png" label="TAILWINDPALETTE" />
       <ShowDownBit href="/pfi" src="/assets/5.png" label="PALETTEFROMIMAGE" />
       <ShowDownBit href="/palette-from-color" src="/assets/6.png" label="PALETTEFROMCOLOR" />
       <ShowDownBit href="/color-says" src="/assets/7.png" label="WHATCOLORSAYS" />
