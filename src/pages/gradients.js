@@ -11,6 +11,43 @@ export default function Gradients() {
     <>
       <Head>
         <title>ColPat : Awesome Gradients ✨</title>
+        <meta name="title" content="ColPat : Awesome Gradients ✨" />
+        <meta
+          name="description"
+          content="ColPat's Awesome Gradients feature allows you to generate infinite gradients with ease. Gradients can add depth and texture to your designs and make them more visually appealing. With this feature, you can experiment with different color combinations and create gradients that suit your design needs.
+"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://colpat.itsvg.in/gradients" />
+        <meta property="og:title" content="ColPat : Awesome Gradients ✨" />
+        <meta
+          property="og:description"
+          content="ColPat's Awesome Gradients feature allows you to generate infinite gradients with ease. Gradients can add depth and texture to your designs and make them more visually appealing. With this feature, you can experiment with different color combinations and create gradients that suit your design needs.
+"
+        />
+        <meta
+          property="og:image"
+          content="https://colpat.itsvg.in/assets/3.png"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://colpat.itsvg.in/gradients"
+        />
+        <meta
+          property="twitter:title"
+          content="ColPat : Awesome Gradients ✨"
+        />
+        <meta
+          property="twitter:description"
+          content="ColPat's Awesome Gradients feature allows you to generate infinite gradients with ease. Gradients can add depth and texture to your designs and make them more visually appealing. With this feature, you can experiment with different color combinations and create gradients that suit your design needs.
+"
+        />
+        <meta
+          property="twitter:image"
+          content="https://colpat.itsvg.in/assets/3.png"
+        />
       </Head>
       <div className="w-full flex justify-center">
         <main className="w-full max-w-5xl flex flex-col items-center justify-center">
