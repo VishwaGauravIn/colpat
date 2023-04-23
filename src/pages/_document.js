@@ -1,6 +1,7 @@
 import Footer from "@/components/globals/Footer";
 import NavBar from "@/components/globals/NavBar";
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
@@ -42,6 +43,23 @@ export default function Document() {
           content="https://colpat.itsvg.in/og.png"
         />
       </Head>
+      {/* Google Analytics */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-7DMF88ZZJV"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-7DMF88ZZJV', { page_path: window.location.pathname });
+            `,
+        }}
+      />
       <body>
         <NavBar />
         <Main />

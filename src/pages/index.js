@@ -19,6 +19,7 @@ export default function Home() {
         <title>ColPat : Color Palette & Design Tool</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        
       </Head>
       <main className="-mt-24 cursor-none">
         <Hero />
