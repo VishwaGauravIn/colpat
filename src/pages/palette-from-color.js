@@ -37,6 +37,46 @@ export default function PaletteFromColor() {
     <>
       <Head>
         <title>ColPat : Color Palette from Color [AI]</title>
+        <meta name="title" content="ColPat : Color Palette from Color [AI]" />
+        <meta
+          name="description"
+          content="ColPat's Color Palette from Color [AI] feature allows you to generate a color palette from a single color. Just tell ColPat about the color you want to use, and it will generate the best color palette for you. This feature is useful when you have a specific color in mind and want to build a palette around it."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://colpat.itsvg.in/palette-from-color"
+        />
+        <meta
+          property="og:title"
+          content="ColPat : Color Palette from Color [AI]"
+        />
+        <meta
+          property="og:description"
+          content="ColPat's Color Palette from Color [AI] feature allows you to generate a color palette from a single color. Just tell ColPat about the color you want to use, and it will generate the best color palette for you. This feature is useful when you have a specific color in mind and want to build a palette around it."
+        />
+        <meta
+          property="og:image"
+          content="https://colpat.itsvg.in/assets/6.png"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://colpat.itsvg.in/palette-from-color"
+        />
+        <meta
+          property="twitter:title"
+          content="ColPat : Color Palette from Color [AI]"
+        />
+        <meta
+          property="twitter:description"
+          content="ColPat's Color Palette from Color [AI] feature allows you to generate a color palette from a single color. Just tell ColPat about the color you want to use, and it will generate the best color palette for you. This feature is useful when you have a specific color in mind and want to build a palette around it."
+        />
+        <meta
+          property="twitter:image"
+          content="https://colpat.itsvg.in/assets/6.png"
+        />
       </Head>
       <main className="flex flex-col sm:items-center gap-8 px-4 w-full mb-10 transition-all ease-in-out">
         <p className="text-3xl font-semibold text-white text-center">
