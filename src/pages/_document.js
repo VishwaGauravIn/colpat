@@ -42,24 +42,25 @@ export default function Document() {
           property="twitter:image"
           content="https://colpat.itsvg.in/og.png"
         />
+        {/* Google Analytics */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-7DMF88ZZJV`}
+        />
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7DMF88ZZJV', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
       </Head>
-      {/* Google Analytics */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-7DMF88ZZJV"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-7DMF88ZZJV', { page_path: window.location.pathname });
-            `,
-        }}
-      />
       <body>
         <NavBar />
         <Main />
