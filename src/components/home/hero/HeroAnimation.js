@@ -24,7 +24,7 @@ export default function HeroAnimation() {
             <button
               style={{ background: color }}
               key={i}
-              className="w-9 sm:w-12 h-9 sm:h-12 hover:rounded-full color-block transition-all ease-in-out relative duration-300 focus:rounded-none focus:animate-spin outline-none focus:z-20"
+              className="w-9 sm:w-12 h-9 sm:h-12 hover:rounded-full hover:scale-75 color-block transition-all ease-in-out relative duration-300 focus:rounded-none focus:animate-spin outline-none focus:z-20"
             />
           ))}
         </div>
