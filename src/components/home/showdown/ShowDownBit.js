@@ -2,7 +2,7 @@ import { Char, Phrase } from "animatedtxt";
 import Link from "next/link";
 import React from "react";
 
-export default function ShowDownBit({ href, src, label, size = 50 }) {
+export default function ShowDownBit({ href, src, label, size = 40 }) {
   let letters = label.split("");
   return (
     <>
@@ -14,8 +14,22 @@ export default function ShowDownBit({ href, src, label, size = 50 }) {
             className="pointer-events-none select-none"
             draggable="false"
           />
-          <div className="absolute w-full h-20 bg-black/30 backdrop-blur-lg z-10 left-0 right-0 bottom-0 hidden sm:group-hover:flex justify-center">
+          <div className="absolute w-full h-20 bg-black/30 backdrop-blur-lg z-10 left-0 right-0 bottom-0 hidden lg:group-hover:flex justify-center">
             <Phrase color="white" margin={10} size={size}>
+              {letters.map((letter, id) => (
+                <Char key={id} char={letter} />
+              ))}
+            </Phrase>
+          </div>
+          <div className="absolute w-full h-20 bg-black/30 backdrop-blur-lg z-10 left-0 right-0 bottom-0 hidden md:group-hover:flex lg:group-hover:hidden justify-center">
+            <Phrase color="white" margin={10} size={20}>
+              {letters.map((letter, id) => (
+                <Char key={id} char={letter} />
+              ))}
+            </Phrase>
+          </div>
+          <div className="absolute w-full h-10 bg-black/30 backdrop-blur-lg z-10 left-0 right-0 bottom-0 flex md:group-hover:hidden justify-center">
+            <Phrase color="white" margin={10} size={10}>
               {letters.map((letter, id) => (
                 <Char key={id} char={letter} />
               ))}
@@ -23,7 +37,6 @@ export default function ShowDownBit({ href, src, label, size = 50 }) {
           </div>
         </Link>
       </div>
-      <p className="text-center font-semibold block sm:hidden">{label}</p>
     </>
   );
 }
