@@ -40,6 +40,40 @@ export default function Trending() {
     <>
       <Head>
         <title>ColPat : Trending Palettes 🔥</title>
+        <meta name="title" content="ColPat : Trending Palettes 🔥" />
+        <meta
+          name="description"
+          content="ColPat's Trending Color Palettes feature allows you to stay on top of the latest color trends. Whether you're designing a website, creating a marketing campaign, or designing a product, this feature can help you select the most popular colors for your project. You can also customize the palettes to your liking with ColPat's user-friendly interface."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://colpat.itsvg.in/trending" />
+        <meta property="og:title" content="ColPat : Trending Palettes 🔥" />
+        <meta
+          property="og:description"
+          content="ColPat's Trending Color Palettes feature allows you to stay on top of the latest color trends. Whether you're designing a website, creating a marketing campaign, or designing a product, this feature can help you select the most popular colors for your project. You can also customize the palettes to your liking with ColPat's user-friendly interface."
+        />
+        <meta
+          property="og:image"
+          content="https://colpat.itsvg.in/assets/2.png"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://colpat.itsvg.in/trending"
+        />
+        <meta
+          property="twitter:title"
+          content="ColPat : Trending Palettes 🔥"
+        />
+        <meta
+          property="twitter:description"
+          content="ColPat's Trending Color Palettes feature allows you to stay on top of the latest color trends. Whether you're designing a website, creating a marketing campaign, or designing a product, this feature can help you select the most popular colors for your project. You can also customize the palettes to your liking with ColPat's user-friendly interface."
+        />
+        <meta
+          property="twitter:image"
+          content="https://colpat.itsvg.in/assets/2.png"
+        />
       </Head>
       <div className="flex justify-center">
         <main className="flex flex-col sm:items-center gap-8 px-4 w-[64rem] mb-10 transition-all ease-in-out">
