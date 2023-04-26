@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PreFooter() {
   return (
-    <div className="Menu w-full flex justify-center items-center scale-50 sm:scale-100">
+    <div className="Menu w-full max-w-[98vw] flex justify-center items-center scale-50 sm:scale-100">
       <ul className="Menu-list" data-offset="10">
         <li className="Menu-list-item font-bold" data-offset="20">
           COLPAT
