@@ -21,11 +21,12 @@ export default function HeroAnimation() {
       {col.map((colors, i) => (
         <div key={i} className="flex items-center">
           {colors.map((color, i) => (
-            <button
-              style={{ background: color }}
-              key={i}
-              className="w-9 sm:w-12 h-9 sm:h-12 hover:rounded-full hover:scale-75 color-block transition-all ease-in-out relative duration-300 focus:rounded-none focus:animate-spin outline-none focus:z-20"
-            />
+            <div key={i} className="group h-9 sm:h-12">
+              <button
+                style={{ background: color }}
+                className="w-9 sm:w-12 h-9 sm:h-12 group-hover:rounded-[1.5rem] group-hover:scale-75 color-block transition-all ease-in-out relative duration-300 focus:rounded-none focus:animate-spin outline-none focus:z-20"
+              />
+            </div>
           ))}
         </div>
       ))}
