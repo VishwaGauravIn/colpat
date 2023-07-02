@@ -14,7 +14,7 @@ export default function NavBar() {
         <span className="text-3xl font-bold text-yellow">ColPat</span>
       </Link>
       <div className="">
-        <Link href="https://github.com/VishwaGauravIn/colpat" passHref legacyBehavior>
+        <Link href="https://github.com/VishwaGauravIn/" passHref legacyBehavior>
           <a target="_blank" rel="noopener noreferrer">
             <button className="bg-yellow text-black px-4 py-2 rounded-md font-semibold hover:bg-tint-teal active:scale-95 transition-all ease-in-out flex w-max gap-2 justify-center items-center">
               <Github className="w-6 h-6" />
