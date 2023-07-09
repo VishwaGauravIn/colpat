@@ -91,3 +91,18 @@ input[type="color"]:focus-within {
   border-radius: 4px;
   width: 10rem;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+body:hover::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: inherit;
+  background-color: #949494c4;
+}
