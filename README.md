@@ -41,7 +41,7 @@ ColPat's What Color Says! feature explains the psychology of color and how diffe
 ## Our Social Links
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=normal&logo=linkedin&logoColor=white)](https://linkedin.com/in/VishwaGauravIn)
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=normal&logo=Twitter&logoColor=white)](https://twitter.com/VishwaGauravIn)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://instagram.com/VishwaGauravIn)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=normal&logo=Instagram&logoColor=white)](https://instagram.com/VishwaGauravIn)
 
 ## PageSpeed Insights
 ![](https://raw.githubusercontent.com/VishwaGauravIn/Images/f13849bc9989d66c67085313dd606ea978eff0f8/psi-gprm.svg)
