@@ -13,6 +13,11 @@ import Head from "next/head";
 export default function Tpg() {
   const router = useRouter();
   const [tailwindShades, setTailwindShades] = useState("");
+  const tailwindShadesV4 = convertToV4(tailwindShades);
+
+  // TailwindCSS version since v3 and v4 have different way to define presets
+  const [isV4, setIsV4] = useState(false);
+
   useEffect(() => {
     if (router.isReady) {
     }
@@ -46,6 +51,26 @@ export default function Tpg() {
       ])
     );
   }
+
+  // Function to convert old Tailwind color preset to new v4 preset
+  function convertToV4(colors) {
+    // if (typeof colors !== "object" || colors === null) {
+    //   throw new Error("Invalid color object");
+    // }
+
+    let themeVars = "@theme {\n";
+
+    for (const [colorName, shades] of Object.entries(colors)) {
+      if (typeof shades !== "object") continue; // Skip non-object values
+      for (const [shade, color] of Object.entries(shades)) {
+        themeVars += `    --color-${colorName}-${shade}: ${color};\n`;
+      }
+    }
+
+    themeVars += "}";
+    return themeVars;
+  }
+
   return (
     <>
       <Head>
@@ -134,11 +159,16 @@ export default function Tpg() {
             Generate
           </button>
 
+          <div className="flex w-full justify-end max-w-3xl gap-2 items-center text-sm text-offWhite -mb-6">
+            Tailwind Version
+            <VersionSwitchButton isV4={isV4} setIsV4={setIsV4} />
+          </div>
+
           {router.isReady && (
             <Highlight
               {...defaultProps}
-              code={stringify(tailwindShades)}
-              language="js"
+              code={isV4 ? tailwindShadesV4 : stringify(tailwindShades)}
+              language={isV4 ? "css" : "js"}
             >
               {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <pre
@@ -158,7 +188,11 @@ export default function Tpg() {
           )}
           <button
             className="rounded-full py-3 px-6 text-xl font-semibold bg-tint-emerald text-black flex justify-center items-center gap-2 group hover:ring-4 ring-offWhite/40"
-            onClick={() => codeCopier(stringify(tailwindShades))}
+            onClick={() =>
+              isV4
+                ? codeCopier(tailwindShadesV4)
+                : codeCopier(stringify(tailwindShades))
+            }
           >
             <Clipboard2Check className="h-8 w-8 group-hover:scale-90 transition-all ease-in-out" />
             One Click Copy
@@ -167,5 +201,33 @@ export default function Tpg() {
       </div>
       <Toast />
     </>
+  );
+}
+
+function VersionSwitchButton({ isV4, setIsV4 }) {
+  return (
+    <div className="relative inline-flex items-center p-1 rounded-full bg-offWhite">
+      <button
+        className={`relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300 ease-in-out rounded-full ${
+          isV4 ? "text-grey" : "text-white"
+        }`}
+        onClick={() => setIsV4(false)}
+      >
+        v3
+      </button>
+      <button
+        className={`relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300 ease-in-out rounded-full ${
+          isV4 ? "text-white" : "text-grey"
+        }`}
+        onClick={() => setIsV4(true)}
+      >
+        v4
+      </button>
+      <span
+        className={`absolute inset-y-1 w-1/2 bg-black rounded-full shadow-lg transform transition-transform duration-300 ease-in-out ${
+          isV4 ? "translate-x-[85%] " : ""
+        }`}
+      ></span>
+    </div>
   );
 }
